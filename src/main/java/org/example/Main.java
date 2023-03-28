@@ -1,5 +1,7 @@
 package org.example;
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.util.Random;
 import java.time.ZonedDateTime;
 
@@ -8,8 +10,14 @@ public class Main {
         JFrame frame = new JFrame("My First GUI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
+        frame.setLayout(new FlowLayout());
         JButton button = new JButton("Press");
-        frame.getContentPane().add(button); // Adds Button to content pane of frame
+        button.setBackground(Color.GRAY);
+        button.setSize(100, 100);
+        button.setBorderPainted(true);
+        button.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+        frame.add(button);
+
         frame.setVisible(true);
     }
 }
@@ -18,7 +26,8 @@ class Ticket {
     private double price;
     private ZonedDateTime departure;
     private ZonedDateTime arrival;
-    private boolean checkedBags;
+    private int checkedBags;
+    private boolean insurance;
 }
 
 enum SeatClass {
@@ -27,17 +36,34 @@ enum SeatClass {
     BUSINESS,
     FIRST;
 }
+class SeatId {
+    private int row;
+    private int column;
+
+    public SeatId(int row, int column) {
+        this.row = row;
+        this.column = column;
+    }
+    public String getId() {
+        return String.format("%s%s", this.row, this.column);
+    }
+}
 
 class Seat {
     private SeatClass seatClass;
     private double price;
+
     private boolean reserved = false;
 
-    private int row;
-    private int column;
-    public Seat(SeatClass seatClass, double price) {
+    public boolean isReserved() {
+        return reserved;
+    }
+
+    private SeatId seatId;
+    public Seat(SeatClass seatClass, double price, int row, int column) {
         this.seatClass = seatClass;
         this.price = price;
+        this.seatId = new SeatId(row, column);
     }
 }
 
@@ -47,6 +73,7 @@ enum AircraftType {
     WIDE_BODY,
     DOUBLE_DECKER,
 }
+
 class Flight {
 
     private AircraftType aircraftType;
@@ -109,5 +136,16 @@ class Flight {
         Random random = new Random();
         int seatCount = 50 + random.nextInt(max);
         this.seats = new Seat[seatCount];
+    }
+
+    public int getAvailibleSeats() {
+        int count = 0;
+
+        for (int i = 0; i < seats.length; i++) {
+            if (!seats[i].isReserved()) {
+                count++;
+            }
+        }
+        return count;
     }
 }
