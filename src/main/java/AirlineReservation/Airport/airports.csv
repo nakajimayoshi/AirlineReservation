@@ -1,0 +1,49 @@
+Country,City,ICAO
+USA,Miami,KMIA
+Israel,Tel Aviv,LLBG
+Panama,Panama City,MPTO
+United Kingdom,London,EGLL
+France,Paris,LFPG
+Germany,Frankfurt,EDDF
+Japan,Tokyo,RJAA
+South Korea,Seoul,RKSI
+Australia,Sydney,YSSY
+Thailand,Bangkok,VTBS
+United Arab Emirates,Dubai,OMDB
+Kenya,Nairobi,HKJK
+India,Delhi,VIDP
+Netherlands,Amsterdam,EHAM
+Canada,Toronto,CYYZ
+Brazil,São Paulo,SBGR
+Peru,Lima,SPJC
+Russia,Moscow,UUEE
+Turkey,Istanbul,LTBA
+Singapore,Singapore,WSSS
+USA,Chicago,KORD
+USA,Los Angeles,KLAX
+United Arab Emirates,Dubai,OMDB
+China,Hong Kong,VHHH
+Egypt,Cairo,HECA
+India,Delhi,VIDP
+Austria,Vienna,LOWW
+Italy,Rome,LIRF
+Spain,Madrid,LEMD
+China,Shanghai,ZSPD
+India,Mumbai,VABB
+Qatar,Doha,OTHH
+Saudi Arabia,Jeddah,OEJN
+Australia,Brisbane,YBBN
+New Zealand,Auckland,NZAA
+Philippines,Manila,RPLL
+Indonesia,Denpasar,WADD
+Indonesia,Jakarta,WIII
+Vietnam,Ho Chi Minh City,VVTS
+Germany,Munich,EDDM
+Switzerland,Zurich,LSZH
+Belgium,Brussels,EBBR
+Denmark,Copenhagen,EKCH
+Ireland,Dublin,EIDW
+Portugal,Lisbon,LPPT
+Norway,Oslo,ENGM
+Sweden,Stockholm,ESSA
+Finland,Helsinki,EFHK
